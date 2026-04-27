@@ -64,7 +64,7 @@ try {
     # =========================================================
     # --- MODULE AUTO UPDATE (ZERO-AGENT) ---
     # =========================================================
-    $UpdateUrl = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2RhaXBoYW0yMDAxL1NWTl9jbGVhbnVwL21haW4vU2F2YW5pQ2xlYW51cF92OS5wczE="))
+    $UpdateUrl = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2RhaXBoYW0yMDAxL1NWTl9jbGVhbnVwX3YyL21haW4vU2F2YW5pQ2xlYW51cF92OS5wczE="))
     
     try {
         Write-Log "AUTO-UPDATE: Bat dau kiem tra phien ban moi..."
