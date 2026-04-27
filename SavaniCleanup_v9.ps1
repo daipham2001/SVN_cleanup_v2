@@ -111,18 +111,27 @@ try {
     if (-not (Test-Path $ConfigPath -ErrorAction SilentlyContinue)) { exit }
     $config = Get-Content $ConfigPath -Raw | ConvertFrom-Json
 
-    # -- 3. DOC BOT TOKEN TU FILE MA HOA AES -----------------
+    # -- 3. DOC BOT TOKEN ------------------------------------
     $botToken = $null
-    $encFile = "C:\IT_Scripts\.tg_token.enc"
-    if (Test-Path $encFile) {
-        try {
-            $aesKey = [byte[]](1..32)
-            $encryptedData = Get-Content $encFile -Raw
-            $secureString = ConvertTo-SecureString $encryptedData -Key $aesKey
-            $botToken = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureString))
-        } catch { 
-            $botToken = $null 
-            Write-Log "Loi giai ma Token: $($_.Exception.Message)" "ERROR"
+    
+    # Uu tien 1: Lay Token tu file .bat truyen vao (Neu co)
+    if (-not [string]::IsNullOrEmpty($ExternalToken)) {
+        $botToken = $ExternalToken
+        Write-Log "Dung Bot Token tu tham so truyen vao (.bat)"
+    } 
+    # Uu tien 2: Neu khong co (chay tu dong), thi moi doc file ma hoa
+    else {
+        $encFile = "C:\IT_Scripts\.tg_token.enc"
+        if (Test-Path $encFile) {
+            try {
+                $aesKey = [byte[]](1..32)
+                $encryptedData = Get-Content $encFile -Raw
+                $secureString = ConvertTo-SecureString $encryptedData -Key $aesKey
+                $botToken = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureString))
+            } catch { 
+                $botToken = $null 
+                Write-Log "Loi giai ma Token: $($_.Exception.Message)" "ERROR"
+            }
         }
     }
 
