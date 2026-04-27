@@ -8,17 +8,17 @@
     "AggressiveFreeGB": 5
   },
   "Days": {
-    "Temp": 15,
-    "Downloads": 30
+    "Temp": 5,
+    "Downloads": 100
   },
   "Paths": {
     "Zalo": ["AppData\\Local\\ZaloPC", "AppData\\Roaming\\ZaloData"]
   },
-  "SafeExtensions": [".pdf", ".docx", ".xlsx", ".pptx", ".txt", ".rar", ".zip"],
+  "SafeExtensions": [".pdf", ".docx", ".xlsx", ".pptx", ".txt", ".rar", ".zip",.exe"],
   "JunkFolders": ["Cache", "temp", "Thumbnails", "ChatFiles", "media"],
   "ExcludeUsers": ["Public", "Default", "Default User", "All Users", "CEO", "Manager"],
   "Options": {
-    "DryRun": true,
+    "DryRun": false,
     "UseRecycleBin": true,
     "CleanWindowsUpdate": true,
     "NotifyUser": true
