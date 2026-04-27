@@ -1,0 +1,26 @@
+{
+  "Telegram": {
+    "Enabled": true,
+    "ChatID": "-5209519013"
+  },
+  "Threshold": {
+    "MinFreeGBToRun": 200,
+    "AggressiveFreeGB": 5
+  },
+  "Days": {
+    "Temp": 15,
+    "Downloads": 30
+  },
+  "Paths": {
+    "Zalo": ["AppData\\Local\\ZaloPC", "AppData\\Roaming\\ZaloData"]
+  },
+  "SafeExtensions": [".pdf", ".docx", ".xlsx", ".pptx", ".txt", ".rar", ".zip"],
+  "JunkFolders": ["Cache", "temp", "Thumbnails", "ChatFiles", "media"],
+  "ExcludeUsers": ["Public", "Default", "Default User", "All Users", "CEO", "Manager"],
+  "Options": {
+    "DryRun": true,
+    "UseRecycleBin": true,
+    "CleanWindowsUpdate": true,
+    "NotifyUser": true
+  }
+}
