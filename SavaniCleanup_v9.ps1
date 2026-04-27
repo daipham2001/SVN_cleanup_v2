@@ -1,8 +1,10 @@
 ﻿param(
     [string]$ConfigPath = "C:\IT_Scripts\cleanup_config.json",
-    [string]$LogFile    = "C:\IT_Scripts\Cleanup_Log.txt"
+    [string]$LogFile    = "C:\IT_Scripts\Cleanup_Log.txt",
+    [string]$ExternalToken = $null,
+    [string]$ExternalChatID = $null
 )
-$CurrentVersion = 10
+$CurrentVersion = 11
 # ===========================================================
 #  SAVANI IT CLEANUP V9.1 FINAL - Production Ready
 #  100 chi nhanh ban hang - Offline Ready
